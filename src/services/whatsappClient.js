@@ -9,7 +9,7 @@ const client = new Client({
 
 client.on('message', async (message) => {
 	if(message.body === 'Test') {
-		message.reply('Haiii!\nKirim foto untuk dibuat sticker\nGunakan # untuk menanyakan sesuatu');
+		message.reply('Haiii!\nKirim foto untuk dibuat sticker');
 	}else if(message.body.startsWith('#')) {
 		ChatAIHandler(message.body.substring(1)).then(result => message.reply(result))
 	}else if(message.hasMedia) {
