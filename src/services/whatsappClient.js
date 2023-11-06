@@ -5,6 +5,10 @@ const { ChatAIHandler } = require('../feature/chatAI');
 
 const client = new Client({
     authStrategy: new LocalAuth(),
+		puppeteer: { 
+				headless: true,
+				args: ['--no-sandbox', '--disable-setuid-sandbox']
+		}
 })
 
 client.on('message', async (message) => {
